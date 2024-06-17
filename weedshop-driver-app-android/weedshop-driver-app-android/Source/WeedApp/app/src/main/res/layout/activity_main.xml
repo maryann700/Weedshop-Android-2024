@@ -1,0 +1,906 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:sothree="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sliding_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    sothree:umanoPanelHeight="40dp"
+    tools:ignore="MissingPrefix">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@color/background_color"
+            android:minHeight="?android:attr/actionBarSize"
+            app:theme="@style/ToolbarColoredBackArrow"
+            app:titleTextColor="@android:color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+
+                <TextView
+                    android:id="@+id/si_txt_title_signup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="25dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/iv_open_cart"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="15dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/orderhistory" />
+            </LinearLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+
+        <TextView
+            android:id="@+id/txtorderid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background_color_light"
+            android:drawablePadding="5dp"
+            android:drawableRight="@drawable/forwardback"
+            android:gravity="right"
+            android:paddingBottom="15dp"
+            android:paddingRight="12dp"
+            android:paddingTop="15dp"
+            android:text=""
+            android:textColor="@android:color/white"
+            android:visibility="gone" />
+
+
+        <!--<FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#373B44"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Region : "
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Central Cost"
+                android:textColor="#2DCE9C" />
+
+            <ImageView
+                android:id="@+id/ivSearchbtn"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/logo" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <fragment
+                android:id="@+id/mapFragment"
+                class="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/bottom_layout" />
+
+
+            <LinearLayout
+                android:id="@+id/bottom_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="#2DCE9C"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/current_location" />
+
+                <TextView
+                    android:id="@+id/tv_current_location"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/forward" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llSearchView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="#373B44"
+                android:gravity="bottom|center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <!--CHANGE TO GONE-->
+                <Spinner
+                    android:id="@+id/spinnerRegion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/spinner_bg"
+                    android:spinnerMode="dropdown" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/filterbar" />
+
+                <Button
+                    android:id="@+id/btn_signin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/signin_edittext_height"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/round_corner_gradient"
+                    android:paddingLeft="35dp"
+                    android:paddingRight="35dp"
+                    android:text="SEARCH"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rltvbottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:paddingBottom="15dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/lnrheader"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/txtShop"
+                fontPath="fonts/Roboto-Medium.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:onClick="onShopClick"
+                android:text="Shop"
+                android:textColor="@color/shop_del_texttitle"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/imgshop"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="2dp"
+                android:onClick="onShopClick"
+                android:src="@drawable/img_dot_unselected" />
+
+            <ImageView
+                android:id="@+id/imgdelivery"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="2dp"
+                android:onClick="deliveryClick"
+                android:src="@drawable/img_dot_selected" />
+
+            <TextView
+                android:id="@+id/txtdelivery"
+                fontPath="fonts/Roboto-Medium.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:onClick="deliveryClick"
+                android:text="Delivery"
+                android:textColor="#2CCD9B"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <com.weedshop.driver.utils.WrapContentViewPager
+            android:id="@+id/pager1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lnrheader">
+
+            <LinearLayout
+                android:id="@+id/lnrshop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E2E7ED" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/imgshopflag1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:src="@drawable/greenflag" />
+
+                        <TextView
+                            fontPath="fonts/Roboto-Medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/imgshopflag1"
+                            android:text="From: You"
+                            android:textColor="@color/shop_del_texttitle" />
+
+                        <TextView
+                            android:id="@+id/txtyouadd"
+                            fontPath="fonts/Roboto-Medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/imgshopflag1"
+                            android:ellipsize="end"
+                            android:maxLines="4"
+                            android:text="W Pleasant Ave"
+                            android:textColor="@android:color/black" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:layout_width="1.5dp"
+                        android:layout_height="match_parent"
+                        android:background="#E2E7ED" />
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/imgshopflag2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:src="@drawable/blackflag" />
+
+                        <TextView
+                            fontPath="fonts/Roboto-Medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/imgshopflag2"
+                            android:text="To: Shop"
+                            android:textColor="@color/shop_del_texttitle" />
+
+                        <TextView
+                            android:id="@+id/txtshopadd"
+                            fontPath="fonts/Roboto-Medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/imgshopflag2"
+                            android:ellipsize="end"
+                            android:maxLines="4"
+                            android:text="W Maple Ave G202"
+                            android:textColor="@android:color/black" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E2E7ED" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:id="@+id/imgshopdistance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/mark_product" />
+
+                        <TextView
+                            android:id="@+id/txtshopkm"
+                            fontPath="fonts/Roboto-Medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/imgshopdistance"
+                            android:ellipsize="end"
+                            android:lines="1"
+                            android:maxLines="1"
+                            android:text="01 km"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            fontPath="fonts/Roboto-Medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtshopkm"
+                            android:layout_toRightOf="@+id/imgshopdistance"
+                            android:text="Distance"
+                            android:textColor="@color/shop_del_texttitle" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center|center_vertical">
+
+                        <ImageView
+                            android:id="@+id/imgshoptime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/tinytime" />
+
+                        <TextView
+                            android:id="@+id/txtshoptime"
+                            fontPath="fonts/Roboto-Medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/imgshoptime"
+                            android:ellipsize="end"
+                            android:lines="1"
+                            android:maxLines="1"
+                            android:text="00.20"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            fontPath="fonts/Roboto-Medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtshoptime"
+                            android:layout_toRightOf="@+id/imgshoptime"
+                            android:text="Time"
+                            android:textColor="@color/shop_del_texttitle" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="15dp"
+                        android:layout_weight="1"
+                        android:gravity="right|center_vertical">
+
+                        <ImageView
+                            android:id="@+id/imgshopprice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/dollersign" />
+
+                        <TextView
+                            android:id="@+id/txtshopprice"
+                            fontPath="fonts/Roboto-Medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/imgshopprice"
+                            android:ellipsize="end"
+                            android:lines="1"
+                            android:maxLines="1"
+                            android:text="$77.00"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            fontPath="fonts/Roboto-Medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtshopprice"
+                            android:layout_toRightOf="@+id/imgshopprice"
+                            android:text="Price"
+                            android:textColor="@color/shop_del_texttitle" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E2E7ED" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/round_corner_small_black_border"
+                    android:orientation="horizontal"
+                    android:padding="7dp">
+
+                    <com.weedshop.driver.utils.RoundedImageView
+                        android:id="@+id/imgshopprofile"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/shop" />
+
+                    <LinearLayout
+                        android:id="@+id/lnrshopowner"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_toRightOf="@+id/imgshopprofile"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtshopfname"
+                            fontPath="fonts/Roboto-Medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:gravity="center"
+                            android:maxLines="2"
+                            android:text="George Orozco"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/txtshopowner"
+                            fontPath="fonts/Roboto-Medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtshopfname"
+                            android:layout_toRightOf="@+id/imgshopprofile"
+                            android:gravity="center"
+                            android:text="Shop Owner"
+                            android:textColor="@color/shop_del_texttitle" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="12dp"
+                        android:layout_toRightOf="@+id/lnrshopowner"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtfirstchoice"
+                            fontPath="fonts/Roboto-Medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:gravity="left|center_vertical"
+                            android:maxLines="2"
+                            android:text="First choice"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            fontPath="fonts/Roboto-Medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Shop Name"
+                            android:textColor="@color/shop_del_texttitle" />
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:id="@+id/frmcall"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/circle_bg">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/mobilenumberwhite" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/shopbtn"
+                    fontPath="fonts/Roboto-Medium.ttf"
+                    android:layout_width="200dp"
+                    android:layout_height="@dimen/signin_edittext_height"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shop_btn_bg"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:paddingTop="5dp"
+                    android:text="PICK UP ORDER?"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lnrdelivery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lnrheader"
+                android:background="@android:color/white"
+                android:orientation="vertical"
+                >
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E2E7ED" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/imgflag1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:src="@drawable/blackflag" />
+
+                        <TextView
+                            fontPath="fonts/Roboto-Medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/imgflag1"
+                            android:text="From: Shop"
+                            android:textColor="@color/shop_del_texttitle" />
+
+                        <TextView
+                            android:id="@+id/txtdeliveryshopadd"
+                            fontPath="fonts/Roboto-Medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/imgflag1"
+                            android:ellipsize="end"
+                            android:maxLines="4"
+                            android:text="W Pleasant Ave"
+                            android:textColor="@android:color/black" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:layout_width="1.5dp"
+                        android:layout_height="match_parent"
+                        android:background="#E2E7ED" />
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/imgflag2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:src="@drawable/deliverflag" />
+
+                        <TextView
+                            fontPath="fonts/Roboto-Medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/imgflag2"
+                            android:text="To: Delivery address"
+                            android:textColor="@color/shop_del_texttitle" />
+
+                        <TextView
+                            android:id="@+id/txtdeliveryadd"
+                            fontPath="fonts/Roboto-Medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/imgflag2"
+                            android:ellipsize="end"
+                            android:maxLines="4"
+                            android:text="W Maple Ave G202"
+                            android:textColor="@android:color/black" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E2E7ED" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:id="@+id/imgdistance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/mark_product" />
+
+                        <TextView
+                            android:id="@+id/txtkm"
+                            fontPath="fonts/Roboto-Medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/imgdistance"
+                            android:ellipsize="end"
+                            android:lines="1"
+                            android:maxLines="1"
+                            android:text="01 km"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            fontPath="fonts/Roboto-Medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtkm"
+                            android:layout_toRightOf="@+id/imgdistance"
+                            android:text="Distance"
+                            android:textColor="@color/shop_del_texttitle" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center|center_vertical">
+
+                        <ImageView
+                            android:id="@+id/imgtime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/tinytime" />
+
+                        <TextView
+                            android:id="@+id/txttime"
+                            fontPath="fonts/Roboto-Medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/imgtime"
+                            android:ellipsize="end"
+                            android:lines="1"
+                            android:maxLines="1"
+                            android:text="00.20"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            fontPath="fonts/Roboto-Medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txttime"
+                            android:layout_toRightOf="@+id/imgtime"
+                            android:text="Time"
+                            android:textColor="@color/shop_del_texttitle" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="15dp"
+                        android:layout_weight="1"
+                        android:gravity="right|center_vertical">
+
+                        <ImageView
+                            android:id="@+id/imgprice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/dollersign" />
+
+                        <TextView
+                            android:id="@+id/txtprice"
+                            fontPath="fonts/Roboto-Medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/imgprice"
+                            android:ellipsize="end"
+                            android:lines="1"
+                            android:maxLines="1"
+                            android:text="$77.00"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            fontPath="fonts/Roboto-Medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtprice"
+                            android:layout_toRightOf="@+id/imgprice"
+                            android:text="Price"
+                            android:textColor="@color/shop_del_texttitle" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E2E7ED" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/round_corner_small_black_border"
+                    android:padding="7dp">
+
+                    <com.weedshop.driver.utils.RoundedImageView
+                        android:id="@+id/imgprofile"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/userplace" />
+
+                    <TextView
+                        android:id="@+id/txtfname"
+                        fontPath="fonts/Roboto-Medium.ttf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/imgprofile"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="4"
+                        android:text="David Thomas"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        fontPath="fonts/Roboto-Medium.ttf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtfname"
+                        android:layout_toRightOf="@+id/imgprofile"
+                        android:gravity="center"
+                        android:text="Client names"
+                        android:textColor="@color/shop_del_texttitle" />
+
+                    <FrameLayout
+                        android:id="@+id/frmdeliverphone"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/circle_bg">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/mobilenumberwhite" />
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/btn"
+                    fontPath="fonts/Roboto-Medium.ttf"
+                    android:layout_width="200dp"
+                    android:layout_height="@dimen/signin_edittext_height"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/round_corner_gradient"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:paddingTop="5dp"
+                    android:text="DELIVERED ORDER?"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+        </com.weedshop.driver.utils.WrapContentViewPager>
+    </RelativeLayout>
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>

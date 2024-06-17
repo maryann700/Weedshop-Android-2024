@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "399351471544",
+    "firebase_url": "https://high5-weed-driver.firebaseio.com",
+    "project_id": "high5-weed-driver",
+    "storage_bucket": "high5-weed-driver.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:399351471544:android:945d3fa1e8a0fe7c",
+        "android_client_info": {
+          "package_name": "com.weedshop.driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "399351471544-vrab3gabjgemrroc33ae8k98oeh2tfi0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.weedshop.driver",
+            "certificate_hash": "2ff168fbddcadc89e33e6ec2c22924ead80a7a82"
+          }
+        },
+        {
+          "client_id": "399351471544-qsanh85tnq5u1pp0eugj2ovsps3ab3bi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCV99V2Ud11rRWTqrOdcgSVH9KL1Hz8sK0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "399351471544-qsanh85tnq5u1pp0eugj2ovsps3ab3bi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

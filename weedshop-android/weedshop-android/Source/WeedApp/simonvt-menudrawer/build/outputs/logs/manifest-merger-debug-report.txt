@@ -1,0 +1,25 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Vishal\Android Studio Projects\weedshop-android\Source\WeedApp\simonvt-menudrawer\AndroidManifest.xml:1:1-5:12
+INJECTED from D:\Vishal\Android Studio Projects\weedshop-android\Source\WeedApp\simonvt-menudrawer\AndroidManifest.xml:1:1-5:12
+INJECTED from D:\Vishal\Android Studio Projects\weedshop-android\Source\WeedApp\simonvt-menudrawer\AndroidManifest.xml:1:1-5:12
+	package
+		ADDED from D:\Vishal\Android Studio Projects\weedshop-android\Source\WeedApp\simonvt-menudrawer\AndroidManifest.xml:2:5-37
+		INJECTED from D:\Vishal\Android Studio Projects\weedshop-android\Source\WeedApp\simonvt-menudrawer\AndroidManifest.xml
+		INJECTED from D:\Vishal\Android Studio Projects\weedshop-android\Source\WeedApp\simonvt-menudrawer\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\Vishal\Android Studio Projects\weedshop-android\Source\WeedApp\simonvt-menudrawer\AndroidManifest.xml:1:11-69
+uses-sdk
+INJECTED from D:\Vishal\Android Studio Projects\weedshop-android\Source\WeedApp\simonvt-menudrawer\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Vishal\Android Studio Projects\weedshop-android\Source\WeedApp\simonvt-menudrawer\AndroidManifest.xml
+INJECTED from D:\Vishal\Android Studio Projects\weedshop-android\Source\WeedApp\simonvt-menudrawer\AndroidManifest.xml
+INJECTED from D:\Vishal\Android Studio Projects\weedshop-android\Source\WeedApp\simonvt-menudrawer\AndroidManifest.xml
+INJECTED from D:\Vishal\Android Studio Projects\weedshop-android\Source\WeedApp\simonvt-menudrawer\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\Vishal\Android Studio Projects\weedshop-android\Source\WeedApp\simonvt-menudrawer\AndroidManifest.xml
+		ADDED from D:\Vishal\Android Studio Projects\weedshop-android\Source\WeedApp\simonvt-menudrawer\AndroidManifest.xml
+		INJECTED from D:\Vishal\Android Studio Projects\weedshop-android\Source\WeedApp\simonvt-menudrawer\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\Vishal\Android Studio Projects\weedshop-android\Source\WeedApp\simonvt-menudrawer\AndroidManifest.xml
+		ADDED from D:\Vishal\Android Studio Projects\weedshop-android\Source\WeedApp\simonvt-menudrawer\AndroidManifest.xml
+		INJECTED from D:\Vishal\Android Studio Projects\weedshop-android\Source\WeedApp\simonvt-menudrawer\AndroidManifest.xml

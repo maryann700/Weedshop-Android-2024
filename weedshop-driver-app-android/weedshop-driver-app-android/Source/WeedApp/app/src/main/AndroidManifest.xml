@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.weedshop.driver">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <!-- <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> -->
+    <!--android:name="android.support.multidex.MultiDexApplication"-->
+    <application
+        android:name=".WeedApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppThemeBase"
+        tools:replace="android:icon,android:label,android:theme">
+        <activity
+            android:name=".SplashActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SignInActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ShopProductsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ProductViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SignUpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".VerificationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddIdentificationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CarDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".VerifyProcessActivity"
+            android:screenOrientation="portrait" />
+
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key_live" />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="f7e104726ca7ac7d70111c4bc5eba7b7fcdf63f7" />
+
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps" />
+
+        <service
+            android:name=".services.MyLocationService"
+            android:enabled="true" />
+        <service android:name=".services.OrderRequestService" />
+
+        <activity
+            android:name=".OrderHistoryActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".CurrentOrderActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ForgotActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ProfileActivity1"
+            android:screenOrientation="portrait"
+
+            android:windowSoftInputMode="stateHidden" />
+
+        <activity
+            android:name=".PrivacyPolicyActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- Firebase Notifications -->
+        <service android:name=".service.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <service android:name=".service.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <!-- ./Firebase Notifications -->
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.weedshop.driver.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

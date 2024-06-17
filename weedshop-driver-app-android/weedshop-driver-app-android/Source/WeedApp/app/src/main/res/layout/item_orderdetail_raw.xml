@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@color/background_color"
+        android:orientation="horizontal">
+
+        <com.weedshop.driver.utils.RoundedImageView
+            android:id="@+id/imgProduct"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:src="@drawable/signinlogo" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtpname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:text="Name name name name "
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtdesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:text="FGFGH HH"
+                android:textColor="#A2AAB7"
+                android:textSize="10dp" />
+
+
+            <TextView
+                android:id="@+id/txtquntity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:text=""
+                android:textColor="#A2AAB7"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/txttype"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:background="@drawable/round_corner"
+                android:paddingBottom="2dp"
+                android:paddingLeft="10dp"
+                android:textAllCaps="true"
+                android:paddingRight="10dp"
+                android:paddingTop="2dp"
+                android:text="$10"
+                android:textColor="@android:color/white"
+                android:textSize="9sp" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtproductprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:text="$10"
+            android:textColor="@color/progressbar_color" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/viewdevider"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@android:color/white" />
+</LinearLayout>

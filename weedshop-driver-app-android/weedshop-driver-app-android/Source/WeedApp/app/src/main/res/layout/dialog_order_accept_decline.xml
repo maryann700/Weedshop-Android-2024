@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:seekarc="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_transparent"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_header"
+            fontPath="fonts/Roboto-Medium.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/seekround_back"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="@string/progress_accept_order_time"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/progressbar_color"
+            android:textSize="70sp" />
+
+        <com.triggertrap.seekarc.SeekArc
+            android:id="@+id/seekround_back"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            seekarc:arcColor="@android:color/transparent"
+            seekarc:clockwise="false"
+            seekarc:enabled="false"
+            seekarc:max="60"
+            seekarc:progress="60"
+            seekarc:progressColor="#2CCD9B"
+            seekarc:progressWidth="3dp"
+            seekarc:rotation="180"
+            seekarc:startAngle="180"
+            seekarc:sweepAngle="360"
+            seekarc:touchInside="false" />
+
+        <com.triggertrap.seekarc.SeekArc
+            android:id="@+id/seekround"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            seekarc:arcColor="@android:color/transparent"
+            seekarc:clockwise="false"
+            seekarc:enabled="false"
+            seekarc:max="60"
+            seekarc:progress="00"
+            seekarc:progressColor="#FFFFFF"
+            seekarc:progressWidth="3dp"
+            seekarc:rotation="180"
+            seekarc:startAngle="180"
+            seekarc:sweepAngle="360"
+            seekarc:touchInside="false" />
+
+
+        <!-- <ProgressBar
+             android:id="@+id/ProgressBar"
+             android:layout_width="200dp"
+             android:layout_height="200dp"
+             style="?android:attr/progressBarStyleLarge"
+             android:indeterminateDrawable="@drawable/progressbarbg"
+             android:indeterminate="false"
+             android:max="60"
+             android:progress="100"/>-->
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/lnrheader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/top_round_corner"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/greenflag" />
+
+                    <TextView
+                        fontPath="fonts/Roboto-Medium.ttf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:text="From : You"
+                        android:textColor="@color/shop_del_texttitle" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtcurrentLocation"
+                    fontPath="fonts/Roboto-Medium.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Current Location"
+                    android:textColor="@android:color/black" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray" />
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/deliverflag" />
+
+                    <TextView
+                        fontPath="fonts/Roboto-Medium.ttf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:text="To : Deliver address"
+                        android:textColor="@color/shop_del_texttitle" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtDeliveryadd"
+                    fontPath="fonts/Roboto-Medium.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Current Location"
+                    android:textColor="@android:color/black" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@android:color/darker_gray" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="15dp"
+            android:weightSum="3">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/imgdistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/mark_product" />
+
+                <TextView
+                    android:id="@+id/txtkm"
+                    fontPath="fonts/Roboto-Medium.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/imgdistance"
+                    android:text="01 km"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    fontPath="fonts/Roboto-Medium.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtkm"
+                    android:layout_toRightOf="@+id/imgdistance"
+                    android:text="Distance"
+                    android:textColor="@color/shop_del_texttitle" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center|center_vertical">
+
+                <ImageView
+                    android:id="@+id/imgtime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/tinytime" />
+
+                <TextView
+                    android:id="@+id/txttime"
+                    fontPath="fonts/Roboto-Medium.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/imgtime"
+                    android:text="00.20"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    fontPath="fonts/Roboto-Medium.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txttime"
+                    android:layout_toRightOf="@+id/imgtime"
+                    android:text="Time"
+                    android:textColor="@color/shop_del_texttitle" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="right|center_vertical">
+
+                <ImageView
+                    android:id="@+id/imgprice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/dollersign" />
+
+                <TextView
+                    android:id="@+id/txtprice"
+                    fontPath="fonts/Roboto-Medium.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/imgprice"
+                    android:text="$77.00"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    fontPath="fonts/Roboto-Medium.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtprice"
+                    android:layout_toRightOf="@+id/imgprice"
+                    android:text="Price"
+                    android:textColor="@color/shop_del_texttitle" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@android:color/darker_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="15dp">
+
+
+            <Button
+                android:id="@+id/btn_accept"
+                fontPath="fonts/Roboto-Bold.ttf"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/rectanglegreen"
+                android:gravity="center"
+                android:text="ACCEPT"
+                android:textColor="@android:color/white"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/btndecline"
+                fontPath="fonts/Roboto-Bold.ttf"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/rectanglered"
+                android:gravity="center"
+                android:text="DECLINE"
+                android:textColor="@android:color/white"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
